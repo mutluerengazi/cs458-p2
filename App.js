@@ -43,25 +43,36 @@ export default function App() {
       <TextInput
         placeholder="Name-surname"
         style={styles.input}
-        onChangeText={setNameSurname}
+        onChangeText={(text) =>
+          /^[A-Za-z ]+$/.test(text) || text === "" ? setNameSurname(text) : null
+        }
         value={nameSurname}
       />
       <TextInput
         placeholder="Birth Year (YYYY)"
         style={styles.input}
-        onChangeText={setBirthDate}
+        onChangeText={(text) =>
+          /^\d{0,4}$/.test(text) ? setBirthDate(text) : null
+        }
         value={birthDate}
       />
+
       <TextInput
         placeholder="Education Level"
         style={styles.input}
-        onChangeText={setEducationLevel}
+        onChangeText={(text) =>
+          /^[A-Za-z ]+$/.test(text) || text === ""
+            ? setEducationLevel(text)
+            : null
+        }
         value={educationLevel}
       />
       <TextInput
         placeholder="City"
         style={styles.input}
-        onChangeText={setCity}
+        onChangeText={(text) =>
+          /^[A-Za-z ]+$/.test(text) || text === "" ? setCity(text) : null
+        }
         value={city}
       />
       <Picker
