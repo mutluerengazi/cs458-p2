@@ -238,7 +238,7 @@ class TestForm(unittest.TestCase):
             ai_names=["Bard"],
             cons="AI Cons",
             use="A Use Case",
-            valid=True
+            valid=False
         )
 
 if __name__ == '__main__':
